@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-readiness
+spec:
+  replicas: 3
+  # number of revision count kept
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels:
+      app: helloworld
+  # Whenever you edit the deployment it will run the new one as extra(1) and change others afterwards.
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: k8s-demo
+        image: wardviaene/k8s-demo
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
+        #Probes
+        livenessProbe:
+          httpGet:
+            path: /
+            port: nodejs-port
+          initialDelaySeconds: 15
+          timeoutSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /
+            port: nodejs-port
+          initialDelaySeconds: 15
+          timeoutSeconds: 30
+        volumeMounts:
+        - name: cred-volume
+          mountPath: /etc/creds
+          readOnly: true
+      volumes:
+      - name: cred-volume
+        secret: 
+          secretName: db-secrets
