@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: wordpress
-        image: wordpress:6-php7.4
+        image: wordpress:4-php7.0
         ports:
         - name: http-port
           containerPort: 80
@@ -27,7 +27,7 @@ spec:
           - name: WORDPRESS_DB_HOST
             value: 127.0.0.1
       - name: mysql
-        image: mysql:oracle
+        image: mysql:5.7
         ports:
         - name: mysql-port
           containerPort: 3306
