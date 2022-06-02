@@ -1,0 +1,1 @@
+## Advanced topics configmaps, stateful/stateless-sets, daemonsets,volumes, affinity/anti-affinity, taints&tolerations will be held in this folder. 

@@ -1,0 +1,1 @@
+### Basic kubernetes services-deployments-replicasets-probes(liveness&readiness)-pods-secrets will be held in this folder.
