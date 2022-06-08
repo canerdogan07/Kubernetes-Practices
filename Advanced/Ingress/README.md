@@ -8,7 +8,7 @@
     ```
         minikube enable addons ingress
     ```
-Intention is to connect to helloworld-v1.example.com and helloworld-v2.example.com which are echoing Hello World! and Hello World1!. Default localhost connection will be resulting empty.
+* Intention is to connect to helloworld-v1.example.com and helloworld-v2.example.com which are echoing Hello World! and Hello World1!. Default localhost connection will be resulting empty.
 
 So try; 
 ```
