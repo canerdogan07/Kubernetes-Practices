@@ -10,4 +10,9 @@
 * Deployment get created with quotas defined. Otherwise the creation of the deployment will be outputting an error.
 
 * You will be observing a difference between the requested replicas of deployment, while the request is 3 replicas, quotas will only allow creating 2 replicas.
-
+--- 
+* You can either set a limit quota for default pod/container(containerlimits.yml file can be observed) creations without specifying any quotas and can be observed with the following;
+```
+    kubectl describe limits <limit-name> --namespace=<desired-namespace>
+```
+---
