@@ -1,0 +1,1 @@
+### To make a cluster highly available, you need at least 3 etcd nodes backed up with replicated API servers which are servicing through LoadBalancers. The leader will be one of them, other two will be stand-by.
