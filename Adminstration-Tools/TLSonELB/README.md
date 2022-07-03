@@ -12,7 +12,7 @@
     "
     To add resource tags;
     "
-    service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags
+    service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: "enviroment=dev, app=helloworld"
     "
     Backend protocol to use;
     "
@@ -20,12 +20,12 @@
     "
     Certificates;
     "
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert   ARN
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert : "  ARN   "
     "
     Connection Draining and Timeout;
     "
-    service.beta.kubernetes.io/aws-load-balancer-connection-draining-enabled
-    service.beta.kubernetes.io/aws-load-balancer-connection-draining-timeout
+    service.beta.kubernetes.io/aws-load-balancer-connection-draining-enabled: "true"
+    service.beta.kubernetes.io/aws-load-balancer-connection-draining-timeout: "60"
     service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout
     service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled
     "
@@ -34,8 +34,8 @@
     service.beta.kubernetes.io/aws-load-balancer-extra-security-groups
     "
     Configure LB;
-    "service.beta.kubernetes.io/aws-load-balancer-internal = true
+    "service.beta.kubernetes.io/aws-load-balancer-internal : "true"
     service.beta.kubernetes.io/aws-load-balancer-proxy-protocol
-    service.beta.kubernetes.io/aws-load-balancer-ssl-ports
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
     "
 
